@@ -24,8 +24,9 @@ RUN mvn clean package -DskipTests -Pproduction
 
 # Running stage: the part that is used for running the application
 FROM openjdk:11
-COPY --from=build /usr/src/app/target/*.jar /usr/app/app.jar
+WORKDIR /
+ADD target/realdatanofake-1.0-SNAPSHOT.jar app.jar
 RUN useradd -m myuser
 USER myuser
-EXPOSE 8080
-CMD java -jar /usr/app/app.jar
+EXPOSE 8090
+CMD java -jar -Dspring.profiles.active=prod app.jar
