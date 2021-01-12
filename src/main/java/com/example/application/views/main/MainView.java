@@ -71,7 +71,7 @@ public class MainView extends AppLayout {
         logoLayout.setId("logo");
         logoLayout.setAlignItems(FlexComponent.Alignment.CENTER);
         logoLayout.add(new Image("images/logo.png", "realdatanofake logo"));
-        logoLayout.add(new H1("realdatanofake"));
+        logoLayout.add(new H1("REAL DATA"));
         layout.add(logoLayout, menu);
         return layout;
     }
@@ -86,8 +86,8 @@ public class MainView extends AppLayout {
     }
 
     private Component[] createMenuItems() {
-        return new Tab[]{createTab("Hello World", HelloWorldView.class), createTab("About", AboutView.class),
-                createTab("Dashboard", DashboardView.class), createTab("List", ListView.class)};
+        return new Tab[]{createTab("HOME", HelloWorldView.class), /*createTab("About", AboutView.class),*/
+                createTab("COVID", DashboardView.class)/*, createTab("List", ListView.class)*/};
     }
 
     private static Tab createTab(String text, Class<? extends Component> navigationTarget) {
